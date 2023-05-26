@@ -3,9 +3,12 @@ import React from "react";
 import { useState } from 'react';
 
 
+
 export default function Calcu(props) {
 
   let {opcion} = props;
+  
+  
 
   const[dias, setDias] = useState('')
   const[anios, setAnios] = useState('')
@@ -20,6 +23,21 @@ export default function Calcu(props) {
   const manejarHoras = (e)=>{
     setHoras(e.target.value)
   }
+
+  const hora100 = opcion * 0.0104;
+  const dia = opcion / 24;
+  const sueldoBasicoACobrar = (opcion / 30) * dias;
+  const hora100dia = horas * (hora100 * 1.12);
+  const especialidad = sueldoBasicoACobrar * 0.12;
+  const promHs = 904.62;
+  const antiguedad = ((sueldoBasicoACobrar + hora100dia + especialidad + promHs) * 0.01) * anios;
+  const viatico = dia * 0.368358;
+  const comida = dia * 0.184843;
+  const viaticoPorMes = viatico * (dias - 6);
+  const comidaPorMes = comida * (dias - 6);
+  const totalBruto = antiguedad + hora100dia + especialidad + parseFloat(opcion);
+  const deducciones = totalBruto * 0.215;
+  const totalNeto = (viaticoPorMes + comidaPorMes + totalBruto) - deducciones
 
 
   return (
@@ -51,14 +69,16 @@ export default function Calcu(props) {
         ):<br></br>}
       </form>
 
-         
-          <h4>Sueldo bruto:  ${opcion}</h4>
-          <h4>Sueldo neto: <span className='bruto'>${opcion}</span></h4>
+       
+          <h4>Sueldo Bruto:  ${totalBruto.toFixed(2)}</h4>
+          <h4>Sueldo en Mano: <span className='bruto'>${totalNeto.toFixed(2)}</span></h4>
 
       <div class="d-grid gap-2 mt-5 mb-3">
-          <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" onclick="calcularSueldo()" disabled={dias > 30 || dias === ''}>Más detalles</button>
+          <button class="btn btn-primary"  disabled={dias > 30 || dias === ''}>Más detalles</button>
           
       </div>
+
+     
   </>
    
   );
