@@ -10,7 +10,7 @@ export default function Calcu(props) {
   
   
 
-  const[dias, setDias] = useState('')
+  const[dias, setDias] = useState(30)
   const[anios, setAnios] = useState('')
   const[horas, setHoras] = useState('')
 
@@ -45,7 +45,7 @@ export default function Calcu(props) {
       <form class="form-floating formulario">
         <div className="form-floating mb-3 ">
           <input type="number" className= 'form-control' value={dias} onChange={manejarDias} />
-          <label for="floatingInput">Ingresá los días trabajados:</label>
+          <label for="floatingInput">Ingresá los días trabajados: (de 0 a 30)</label>
         </div>
         {dias > 30 || dias < 0 ? (
           <p className='error'>Cantidad de días fuera de rango</p>
@@ -53,7 +53,7 @@ export default function Calcu(props) {
         
         <div className="form-floating mb-3 ">
           <input type="number" className="form-control" value={anios} onChange={manejarAnios} />
-          <label for="floatingInput">Ingresá los años trabajados:</label>
+          <label for="floatingInput">Ingresá los años trabajados: (Hasta 50)</label>
         </div>
         {anios > 50 || anios < 0 ? (
           <p className='error'>Cantidad de años incorrecta</p>
