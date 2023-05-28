@@ -40,7 +40,7 @@
 }
 
 .formulario{
-    padding-top: 30px;
+    padding-top: 20px;
 }
 
 .modal {
@@ -59,7 +59,25 @@
   
 }
 .bruto{
-    color: rgb(69, 202, 69);
+    color: #1fa65e;
     font-weight: 700;
+    font-size: larger;
 }
 
+.deducciones{
+    color: #bc253e;
+}
+.vacas{
+    display: none;
+}
+.inputVacas{
+    padding: 20px 0px 5px;
+
+}
+.vacaciones{
+    background-color: rgba(0, 0, 0, 0.137);
+    padding: 10px 10px 10px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    
+}

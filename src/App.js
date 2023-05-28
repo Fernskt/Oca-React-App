@@ -9,9 +9,9 @@ function App() {
       <div className="contenedor-centrar">
         <div className="py-3 px-5 form-contenedor">
         <Categorias></Categorias>
+        
         </div>
       </div> 
-
     </div> //App
   );
 }
