@@ -2,7 +2,7 @@ import React from "react";
 
 export default function modal({dias, totalBruto, totalNeto, opcion, antiguedad, dia, hora100dia, 
                                 viatico, comida, sueldoBasicoACobrar, especialidad, viaticoPorMes,
-                                comidaPorMes, deducciones, anios}) {
+                                comidaPorMes, deducciones, anios, vacaciones}) {
 
  opcion = parseFloat(opcion);
 
@@ -33,8 +33,8 @@ export default function modal({dias, totalBruto, totalNeto, opcion, antiguedad, 
                 Antigüedad: <b> $<span>{antiguedad.toFixed(2)}</span></b> <br/><br/>
                 Valor del Día trabajado: <b> $<span>{dia.toFixed(2)}</span></b> <br/><br/>
                 Total de Horas extras al 100%: <b> $<span>{hora100dia.toFixed(2)}</span></b> <br/><br/>
-                Viático por día: <b> $<span>{viatico.toFixed(2)}</span></b> <br/><br/>
                 Comida por día: <b> $<span>{comida.toFixed(2)}</span></b> <br/><br/>
+                Viático por día: <b> $<span>{viatico.toFixed(2)}</span></b> <br/><br/>
                 Sueldo: <b> $<span>{sueldoBasicoACobrar.toFixed(2)}</span></b> <br/><br/>
                 especialidad: <b> $<span>{especialidad.toFixed(2)}</span></b> <br/><br/>
                <h5>Total a cobrar Bruto: <b className="bruto"> $<span >{totalBruto.toFixed(2)}</span></b> <br/><br/></h5>
@@ -74,7 +74,8 @@ export default function modal({dias, totalBruto, totalNeto, opcion, antiguedad, 
             <div class="modal-body">
             Total Viático: <b> $<span>{viaticoPorMes.toFixed(2)}</span></b> <br/><br/>
                 Total comida: <b> $<span>{comidaPorMes.toFixed(2)}</span></b> <br/><br/>
-               <div id="vaca"></div>
+                Vacaciones: <b> $<span>{vacaciones.toFixed(2)}</span></b> <br/><br/>
+               
                 Deducciones: <b className="deducciones"> $-<span>{deducciones.toFixed(2)}</span></b> <br/><br/>
                <h5> Total a cobrar Neto: <b className="bruto"> $<span>{totalNeto.toFixed(2)}</span></b></h5> <br/><br/>
             </div>

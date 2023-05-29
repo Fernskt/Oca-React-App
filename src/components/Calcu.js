@@ -3,8 +3,8 @@ import React from "react";
 import { useState } from "react";
 import Modal from "../components/Modal";
 
-export default function Calcu(props) {
-  let { opcion } = props;
+export default function Calcu({opcion, vaca}) {
+  
 
   const [dias, setDias] = useState(30);
   const [anios, setAnios] = useState(0);
@@ -20,21 +20,22 @@ export default function Calcu(props) {
     setHoras(e.target.value);
   };
 
-  const hora100 = opcion * 0.0104;
+  const hora100 = opcion * 0.0104167;
   const dia = opcion / 24;
   const sueldoBasicoACobrar = (opcion / 30) * dias;
   const hora100dia = horas * (hora100 * 1.12);
   const especialidad = sueldoBasicoACobrar * 0.12;
   const promHs = 904.62;
-  const antiguedad = (sueldoBasicoACobrar + hora100dia + especialidad + promHs) * 0.01 * anios;
-  const viatico = dia * 0.368358;
-  const comida = dia * 0.184843;
+  const vacaciones = vaca * 2908.09;
+  const antiguedad = (sueldoBasicoACobrar + hora100dia + especialidad + promHs + vacaciones) * 0.01 * anios;
+  const viatico = dia * 0.184843;
+  const comida = dia * 0.368358;
   const viaticoPorMes = viatico * (dias - 6);
   const comidaPorMes = comida * (dias - 6);
-  const totalBruto = antiguedad + hora100dia + especialidad + parseFloat(opcion);
+  const totalBruto = antiguedad + hora100dia + especialidad + vacaciones + parseFloat(opcion);
   const deducciones = totalBruto * 0.215;
-  const totalNeto = viaticoPorMes + comidaPorMes + totalBruto - deducciones;
-  const vacaciones = 3417.95;
+  
+  const totalNeto = (viaticoPorMes + comidaPorMes + totalBruto) - deducciones;
 
   return (
     <>
@@ -51,7 +52,7 @@ export default function Calcu(props) {
           </label>
         </div>
         {dias > 30 || dias < 0 || dias === '' ? (
-          <p className="error">Cantidad de días fuera de rango</p>
+          <p className="error">Cantidad de días fuera de rango (de 0 a 30)</p>
         ) : (
           <br></br>
         )}
@@ -119,6 +120,7 @@ export default function Calcu(props) {
       viaticoPorMes={viaticoPorMes}
       comidaPorMes={comidaPorMes}
       deducciones={deducciones}
+      vacaciones={vacaciones}
        />
     </>
   );

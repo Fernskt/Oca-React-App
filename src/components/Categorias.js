@@ -36,7 +36,7 @@ export default function Categorias() {
             type="radio"
             name="inlineRadioOptions"
             id="inlineRadio1"
-            value={145876.55}
+            value={124115.96}
             onChange={manejarRadio}
           />
           <label class="form-check-label" for="inlineRadio1">
@@ -114,7 +114,7 @@ export default function Categorias() {
             onChange={manejarVaca}
           />
           <label for="floatingInput">
-            Ingresá dias de vacaciones: (de 0 a 28)
+            Ingresá días de vacaciones: (de 0 a 28)
           </label>
           
         </div>
@@ -122,8 +122,9 @@ export default function Categorias() {
       </div>
       <hr></hr>
 
-      <Calcu opcion={opcion} />
-      
+      <Calcu opcion={opcion}
+             vaca={vaca} />
+
     </>
   );
 }
