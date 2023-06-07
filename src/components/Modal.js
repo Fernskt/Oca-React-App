@@ -2,7 +2,7 @@ import React from "react";
 
 export default function modal({dias, totalBruto, totalNeto, opcion, antiguedad, dia, hora100dia, 
                                 viatico, comida, sueldoBasicoACobrar, especialidad, viaticoPorMes,
-                                comidaPorMes, deducciones, anios, vacaciones}) {
+                                comidaPorMes, deducciones, anios, vacaciones, enfermedad}) {
 
  opcion = parseFloat(opcion);
 
@@ -37,6 +37,8 @@ export default function modal({dias, totalBruto, totalNeto, opcion, antiguedad, 
                 Viático por día: <b> $<span>{viatico.toFixed(2)}</span></b> <br/><br/>
                 Sueldo: <b> $<span>{sueldoBasicoACobrar.toFixed(2)}</span></b> <br/><br/>
                 especialidad: <b> $<span>{especialidad.toFixed(2)}</span></b> <br/><br/>
+                Licencia por enfermedad: <b> $<span>{enfermedad.toFixed(2)}</span></b> <br/><br/>
+               
                <h5>Total a cobrar Bruto: <b className="bruto"> $<span >{totalBruto.toFixed(2)}</span></b> <br/><br/></h5>
             </div>
             <div class="modal-footer">
@@ -97,7 +99,7 @@ export default function modal({dias, totalBruto, totalNeto, opcion, antiguedad, 
         class="btn btn-primary"
         data-bs-target="#exampleModalToggle"
         data-bs-toggle="modal"
-        disabled={(dias > 30 || dias < 0 || dias === '')||(anios > 50 || anios < 0 || anios === '')||(opcion == 0)}
+        disabled={(dias > 30 || dias < 0 || dias === '')||(anios > 50 || anios < 0 || anios === '')||(opcion === 0)}
       >
         Más Detalles...
       </button>

@@ -3,9 +3,9 @@ import React from "react";
 import { useState } from "react";
 import Modal from "../components/Modal";
 
-export default function Calcu({opcion, vaca}) {
+export default function Calcu({opcion, vaca, enf}) {
   
-
+  
   const [dias, setDias] = useState(30);
   const [anios, setAnios] = useState(0);
   const [horas, setHoras] = useState(0);
@@ -20,6 +20,7 @@ export default function Calcu({opcion, vaca}) {
     setHoras(e.target.value);
   };
 
+  
   const hora100 = opcion * 0.0104167;
   const dia = opcion / 24;
   const sueldoBasicoACobrar = (opcion / 30) * dias;
@@ -27,6 +28,7 @@ export default function Calcu({opcion, vaca}) {
   const especialidad = sueldoBasicoACobrar * 0.12;
   const promHs = 904.62;
   const vacaciones = vaca * 2908.09;
+  const enfermedad = ((parseFloat(opcion) / 30)*1.12)*enf;
   const antiguedad = (sueldoBasicoACobrar + hora100dia + especialidad + promHs + vacaciones) * 0.01 * anios;
   const viatico = dia * 0.184843;
   const comida = dia * 0.368358;
@@ -34,7 +36,6 @@ export default function Calcu({opcion, vaca}) {
   const comidaPorMes = comida * (dias - 6);
   const totalBruto = antiguedad + hora100dia + especialidad + vacaciones + parseFloat(opcion);
   const deducciones = totalBruto * 0.215;
-  
   const totalNeto = (viaticoPorMes + comidaPorMes + totalBruto) - deducciones;
 
   return (
@@ -121,6 +122,7 @@ export default function Calcu({opcion, vaca}) {
       comidaPorMes={comidaPorMes}
       deducciones={deducciones}
       vacaciones={vacaciones}
+      enfermedad={enfermedad}
        />
     </>
   );

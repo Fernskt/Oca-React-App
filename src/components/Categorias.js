@@ -7,18 +7,36 @@ export default function Categorias() {
   const [opcion, setOpcion] = useState(0);
   const [vacaciones, setVacaciones] = useState(false);
   const [vaca, setVaca] = useState(0);
+  const [enfermedad ,  setEnfermedad] = useState(false);
+  const [enf, setEnf] = useState(0);
+  
 
   const manejarVaca = (e) => {
     setVaca(e.target.value);
   };
 
-  const manejarCheckbox = (e) => {
+  const manejarEnf = (e) => {
+    setEnf(e.target.value);
+  };
+
+  const manejarCheckboxV = (e) => {
     setVacaciones(e.target.checked);
     if (!e.target.checked) {
         setVaca(0);
       }
     
   };
+
+  const manejarCheckboxE = (e) => {
+    setEnfermedad(e.target.checked);
+    if (!e.target.checked) {
+       setEnf(0);
+      }
+    
+  };
+
+
+
   
   const manejarRadio = (e) => {
     setOpcion(e.target.value);
@@ -36,7 +54,7 @@ export default function Categorias() {
             type="radio"
             name="inlineRadioOptions"
             id="inlineRadio1"
-            value={124115.96}
+            value={145876.55}
             onChange={manejarRadio}
           />
           <label class="form-check-label" for="inlineRadio1">
@@ -99,7 +117,7 @@ export default function Categorias() {
           value=""
           id="flexCheckDefault"
           checked={vacaciones}
-          onChange={manejarCheckbox}
+          onChange={manejarCheckboxV}
         />
         <label class="form-check-label" for="flexCheckDefault">
           Tuviste vacaciones este mes?
@@ -120,10 +138,43 @@ export default function Categorias() {
         </div>
       </div>
       </div>
+
+      <div className="vacaciones mt-5">
+      
+      <div class="form-check  color-h1">
+      
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="flexCheckDefault"
+          checked={enfermedad}
+          onChange={manejarCheckboxE}
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Tuviste días por enfermedad?
+        </label>
+      </div>
+      <div className={!enfermedad ? "vacas" : "inputVacas"}>
+        <div className="form-floating mb-3 ">
+          <input
+            type="number"
+            className="form-control"
+            value={enf}
+            onChange={manejarEnf}
+          />
+          <label for="floatingInput">
+            Ingresá cantidad de días (de 0 a 30)
+          </label>
+          
+        </div>
+      </div>
+      </div>
       <hr></hr>
 
       <Calcu opcion={opcion}
-             vaca={vaca} />
+             vaca={vaca}
+             enf={enf} />
 
     </>
   );
