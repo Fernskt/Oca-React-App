@@ -23,12 +23,12 @@ export default function NavBar() {
                   Última Escala Salarial
                 </a>
                 <ul className="dropdown-menu dropdown-menu-dark">
-                  <li><a className="dropdown-item" href="https://www.camioneros-ba.org.ar/images/joomlart/escalas/escala_febrero2023_1.jpg">Febrero 2023 hoja 1</a></li>
-                  <li><a className="dropdown-item" href="https://www.camioneros-ba.org.ar/images/joomlart/escalas/escala_febrero2023_2.jpg">Febrero 2023 hoja 2</a></li>
+                  <li><a className="dropdown-item" href="https://www.camioneros-ba.org.ar/images/joomlart/escalas/escala_mayo2023_1.jpg">Mayo 2023 hoja 1</a></li>
+                  <li><a className="dropdown-item" href="https://www.camioneros-ba.org.ar/images/joomlart/escalas/escala_mayo2023_2.jpg">Mayo 2023 hoja 2</a></li>
                   <li>
                     <hr className="dropdown-divider"/>
                   </li>
-                  <li><a className="dropdown-item" href="https://www.camioneros-ba.org.ar/images/joomlart/escalas/Cart_amplia_feb_210.doc">Cartilla Ampliatoria 02/2023</a></li>
+                  <li><a className="dropdown-item" href="https://www.camioneros-ba.org.ar/images/joomlart/escalas/Cart_amplia_mayo_211.doc">Cartilla Ampliatoria 05/2023</a></li>
                 </ul>
               </li>
             <li className="nav-item">

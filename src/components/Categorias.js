@@ -82,11 +82,11 @@ export default function Categorias() {
             type="radio"
             name="inlineRadioOptions"
             id="inlineRadio3"
-            value={141709.48}
+            value={145609.03}
             onChange={manejarRadio}
           />
           <label class="form-check-label" for="inlineRadio3">
-            Distribuidor
+            Admin 1ra
           </label>
         </div>
         <div class="form-check form-check-inline">
@@ -137,9 +137,7 @@ export default function Categorias() {
           
         </div>
       </div>
-      </div>
-
-      <div className="vacaciones mt-5">
+     <br />
       
       <div class="form-check  color-h1">
       

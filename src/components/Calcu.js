@@ -37,6 +37,7 @@ export default function Calcu({opcion, vaca, enf}) {
   const totalBruto = antiguedad + hora100dia + especialidad + vacaciones + parseFloat(opcion);
   const deducciones = totalBruto * 0.215;
   const totalNeto = (viaticoPorMes + comidaPorMes + totalBruto) - deducciones;
+  const dolar = totalNeto / 484;
 
   return (
     <>
@@ -98,8 +99,10 @@ export default function Calcu({opcion, vaca, enf}) {
       {(dias > 30 || dias < 0 || dias === '')||(anios > 50 || anios < 0 || anios === '') ? 
       <h4 className="error">Revisá los campos de arriba</h4> : 
       <>
-      <h4>Sueldo Bruto: ${totalBruto.toFixed(2)}</h4>
-      <h4>Sueldo en Mano: <span className="bruto">${totalNeto.toFixed(2)}</span></h4></>}
+      
+      
+      <h4>Sueldo en Mano: <span className="bruto">${totalNeto.toFixed(2)}</span></h4>
+      <h4>US$<span className="bruto">{dolar.toFixed(1)}</span></h4></>}
       
 
       
