@@ -1,6 +1,7 @@
 import './assets/css/App.css'
 import NavBar from "./components/NavBar";
 import Categorias from "./components/Categorias";
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         
         </div>
       </div> 
+      <Footer></Footer>
     </div> //App
   );
 }

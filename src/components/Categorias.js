@@ -9,8 +9,7 @@ export default function Categorias() {
   const [vaca, setVaca] = useState(0);
   const [enfermedad ,  setEnfermedad] = useState(false);
   const [enf, setEnf] = useState(0);
-  
-
+ 
   const manejarVaca = (e) => {
     setVaca(e.target.value);
   };
@@ -35,9 +34,6 @@ export default function Categorias() {
     
   };
 
-
-
-  
   const manejarRadio = (e) => {
     setOpcion(e.target.value);
   };
@@ -54,7 +50,7 @@ export default function Categorias() {
             type="radio"
             name="inlineRadioOptions"
             id="inlineRadio1"
-            value={145876.55}
+            value={166831.19}
             onChange={manejarRadio}
           />
           <label class="form-check-label" for="inlineRadio1">
@@ -68,7 +64,7 @@ export default function Categorias() {
             type="radio"
             name="inlineRadioOptions"
             id="inlineRadio2"
-            value={155691.62}
+            value={178056.16}
             onChange={manejarRadio}
           />
           <label class="form-check-label" for="inlineRadio2">
@@ -82,7 +78,7 @@ export default function Categorias() {
             type="radio"
             name="inlineRadioOptions"
             id="inlineRadio3"
-            value={145609.03}
+            value={166525.25}
             onChange={manejarRadio}
           />
           <label class="form-check-label" for="inlineRadio3">
