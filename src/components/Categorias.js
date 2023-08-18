@@ -1,9 +1,27 @@
 import "../assets/css/App.css";
 import React from "react";
-import { useState } from "react";
+import { useState , useEffect } from "react";
 import Calcu from "./Calcu";
+import axios from 'axios';
+
 
 export default function Categorias() {
+
+  const [dolarCompra, setDolarCompra] = useState(0);
+  
+  useEffect(() => {
+    let dolarOficial = async ()=>{
+    try{
+      
+          const resultado = await axios.get("https://dolarapi.com/v1/dolares/oficial");
+          setDolarCompra(resultado.data.compra);
+      }catch(error){
+        console.error("Error fetching data: ", error);
+    }    
+  }
+    dolarOficial();
+  },[]);
+
   const [opcion, setOpcion] = useState(0);
   const [vacaciones, setVacaciones] = useState(false);
   const [vaca, setVaca] = useState(0);
@@ -165,11 +183,13 @@ export default function Categorias() {
       </div>
       </div>
       <hr></hr>
-
+      
       <Calcu opcion={opcion}
              vaca={vaca}
-             enf={enf} />
-
+             enf={enf}
+             dolarOficial={dolarCompra} />
+             
+   
     </>
   );
 }

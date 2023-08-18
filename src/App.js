@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar";
 import Categorias from "./components/Categorias";
 import Footer from './components/Footer';
 
+
 function App() {
   return (
     <div className="App">
@@ -13,6 +14,7 @@ function App() {
         
         </div>
       </div> 
+     
       <Footer></Footer>
     </div> //App
   );

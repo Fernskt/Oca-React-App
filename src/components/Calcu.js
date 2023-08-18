@@ -3,7 +3,9 @@ import React from "react";
 import { useState } from "react";
 import Modal from "../components/Modal";
 
-export default function Calcu({opcion, vaca, enf}) {
+
+export default function Calcu({opcion, vaca, enf , dolarOficial}) {
+  
   
   
   const [dias, setDias] = useState(30);
@@ -37,7 +39,7 @@ export default function Calcu({opcion, vaca, enf}) {
   const totalBruto = antiguedad + hora100dia + especialidad + vacaciones + parseFloat(opcion);
   const deducciones = totalBruto * 0.215;
   const totalNeto = (viaticoPorMes + comidaPorMes + totalBruto) - deducciones;
-  const dolar = totalNeto / 484;
+  const dolar = totalNeto / dolarOficial;
 
   return (
     <>
@@ -102,7 +104,9 @@ export default function Calcu({opcion, vaca, enf}) {
       
       
       <h4>Sueldo en Mano: <span className="bruto">${totalNeto.toFixed(2)}</span></h4>
-      <h4>US$<span className="bruto">{dolar.toFixed(1)}</span></h4></>}
+      <h4>US$<span className="bruto">{dolar.toFixed(1)}</span></h4>
+      <p>(Valor del dólar oficial a la fecha: AR${dolarOficial})</p>
+      </>}
       
 
       
