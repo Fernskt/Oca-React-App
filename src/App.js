@@ -1,22 +1,25 @@
+import React from 'react';
 import './assets/css/App.css'
-import NavBar from "./components/NavBar";
-import Categorias from "./components/Categorias";
-import Footer from './components/Footer';
+import Home from './containers/Home';
+import Aguinaldo from './containers/Aguinaldo';
+import Faq from './containers/Faq';
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 
 
 function App() {
   return (
-    <div className="App">
-      <NavBar></NavBar>
-      <div className="contenedor-centrar">
-        <div className="py-3 px-5 form-contenedor">
-        <Categorias></Categorias>
-        
-        </div>
-      </div> 
+   <>
      
-      <Footer></Footer>
-    </div> //App
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/Aguinaldo" element={<Aguinaldo />}></Route>
+          <Route path="/Faq" element={<Faq />}></Route>
+        </Routes>
+      </BrowserRouter>
+   </>
   );
 }
 
