@@ -22,7 +22,17 @@ export default function Faq() {
     </h2>
     <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      Según la Ley de Contrato de Trabajo en Argentina, el período mínimo de vacaciones anuales para un empleado con un año completo de antigüedad es de 14 días hábiles.
+
+A medida que aumenta tu antigüedad, la cantidad de días de vacaciones puede incrementarse. Aquí hay una guía general de cómo se calculan las vacaciones en Argentina:
+<ul>
+<li>1 año de antigüedad: 14 días hábiles de vacaciones.</li>
+<li>5 años de antigüedad: 21 días hábiles de vacaciones.</li>
+<li>10 años de antigüedad: 28 días hábiles de vacaciones.</li>
+
+
+</ul>
+
       </div>
     </div>
   </div>

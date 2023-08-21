@@ -103,7 +103,7 @@ export default function Calcu({opcion, vaca, enf , dolarOficial}) {
       <>
       <h4>Sueldo en Mano: <span className="bruto">${totalNeto.toFixed(2)}</span></h4>
       <h4>US$<span className="bruto">{dolar.toFixed(1)}</span></h4>
-      <p>(Valor del dólar oficial a la fecha: AR${dolarOficial})</p>
+      <p>(Valor del dólar a la fecha: AR${dolarOficial})</p>
       </>}
       
 

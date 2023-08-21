@@ -13,8 +13,8 @@ export default function Categorias() {
     let dolarOficial = async ()=>{
     try{
       
-          const resultado = await axios.get("https://dolarapi.com/v1/dolares/oficial");
-          setDolarCompra(resultado.data.compra);
+          const resultado = await axios.get("https://dolarapi.com/v1/dolares/blue");
+          setDolarCompra(resultado.data.venta);
       }catch(error){
         console.error("Error fetching data: ", error);
     }    
