@@ -7,8 +7,8 @@ import Footer from '../components/Footer';
 
 export default function Home() {
   return (
-    <div>
-      <div className="App">
+    <div className='contenedorPrincipal'>
+     
       <NavBar></NavBar>
       <div className="contenedor-centrar">
         <div className="py-3 px-5 form-contenedor">
@@ -19,6 +19,6 @@ export default function Home() {
      
       <Footer></Footer>
     </div> 
-    </div>
+   
   )
 }

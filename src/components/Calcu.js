@@ -43,7 +43,7 @@ export default function Calcu({opcion, vaca, enf , dolarOficial}) {
 
   return (
     <>
-      <form class="form-floating formulario">
+      <form className="form-floating formulario">
         <div className="form-floating mb-3 ">
           <input
             type="number"
@@ -101,8 +101,6 @@ export default function Calcu({opcion, vaca, enf , dolarOficial}) {
       {(dias > 30 || dias < 0 || dias === '')||(anios > 50 || anios < 0 || anios === '') ? 
       <h4 className="error">Revisá los campos de arriba</h4> : 
       <>
-      
-      
       <h4>Sueldo en Mano: <span className="bruto">${totalNeto.toFixed(2)}</span></h4>
       <h4>US$<span className="bruto">{dolar.toFixed(1)}</span></h4>
       <p>(Valor del dólar oficial a la fecha: AR${dolarOficial})</p>

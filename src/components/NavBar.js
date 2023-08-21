@@ -52,7 +52,7 @@ export default function NavBar() {
                     <li>
                       <a
                         className="dropdown-item"
-                        href="https://www.camioneros-ba.org.ar/images/joomlart/escalas/escala_mayo2023_1.jpg"
+                        href="https://www.camioneros-ba.org.ar/images/joomlart/escalas/escala_agosto2023_1.jpg"
                       >
                        Hoja 1
                       </a>
@@ -60,7 +60,7 @@ export default function NavBar() {
                     <li>
                       <a
                         className="dropdown-item"
-                        href="https://www.camioneros-ba.org.ar/images/joomlart/escalas/escala_mayo2023_2.jpg"
+                        href="https://www.camioneros-ba.org.ar/images/joomlart/escalas/escala_agosto2023_2.jpg"
                       >
                        Hoja 2
                       </a>
@@ -93,6 +93,14 @@ export default function NavBar() {
                     href="https://www.camioneros-ba.org.ar/index.php/gremiales/salarios/escalas-salariales"
                   >
                     Escalas Salariales
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a
+                    className="nav-link"
+                    href="https://www.fedcam.org.ar/images/joomlart/AcuerdoSalarialCamioneros2022-comprimido.pdf"
+                  >
+                    Acuerdo Salarial 2022
                   </a>
                 </li>
               </ul>
