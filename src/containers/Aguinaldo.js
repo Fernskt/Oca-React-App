@@ -33,7 +33,7 @@ export default function Aguinaldo() {
             <p>
               El aguinaldo se calcula como el 50% del mejor salario devengado
               por el empleado en cada semestre del año. la primera parte se paga
-              en junio -que puede extenderse a julio -y la segunda parte en
+              en junio (que puede extenderse a julio) y la segunda parte en
               diciembre. Para poder calcular el mismo, por favor ingresa a
               continuación tu salario bruto más alto.
             </p>
