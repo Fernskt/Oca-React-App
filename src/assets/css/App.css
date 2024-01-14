@@ -7,7 +7,11 @@
    
 }
 
-
+.accordion-button,
+.accordion-header{
+    background-color: #300553e8;
+    color: white;
+}
 
 .bg-image {
     background-image: url(../img/pag10-ocajpg.webp);

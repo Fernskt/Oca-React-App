@@ -16,7 +16,7 @@ export default function Aguinaldo() {
   };
 
   const calcularAguinaldoMano = () => {
-    const descuento = calcularAguinaldo() * 0.21;
+    const descuento = calcularAguinaldo() * 0.215;
     return calcularAguinaldo() - descuento;
   }
 

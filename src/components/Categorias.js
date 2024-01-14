@@ -22,12 +22,16 @@ export default function Categorias() {
     dolarOficial();
   },[]);
 
+  const [sueldosBasicos, setSueldosBasicos] = useState([298425.46,238568.60,208538.99]);
+  const [valorSelect, setValorSelect] = useState("1");
   const [opcion, setOpcion] = useState(0);
   const [vacaciones, setVacaciones] = useState(false);
   const [vaca, setVaca] = useState(0);
+  const [valorVacas, setValorVacas] = useState(6992.24);
   const [enfermedad ,  setEnfermedad] = useState(false);
   const [enf, setEnf] = useState(0);
- 
+  const [esDiaCam , setEsDiaCam] = useState(false);
+
   const manejarVaca = (e) => {
     setVaca(e.target.value);
   };
@@ -52,12 +56,46 @@ export default function Categorias() {
     
   };
 
+  const manejarCheckboxEsDisCam = (e) => {
+    setEsDiaCam(e.target.checked);
+    console.log(esDiaCam)
+  }
+
   const manejarRadio = (e) => {
     setOpcion(e.target.value);
   };
 
+  const manejarSelect =(e) => {
+    const selectedValue = e.target.value;
+    setValorSelect(selectedValue);
+  
+  switch(selectedValue){
+    case "1":
+      setSueldosBasicos([298425.46,318504.55,297878.21]);
+      setValorVacas(6992,24);
+      break;
+    case "2":
+      setSueldosBasicos([238568.60,254620.31,238131.11]);
+      setValorVacas(5589.77);
+      break;
+    case "3":
+      setSueldosBasicos([208538.99,222570.20,208156.56]);
+      setValorVacas(4886.16);
+      break;
+    default:
+      setSueldosBasicos([298425.46,318504.55,297878.21]);
+      setValorVacas(6992,24);
+  }
+}
+
   return (
     <>
+    <select class="form-select " aria-label="Default select example" onChange={manejarSelect} value={valorSelect}>
+    <option value="1">Escala Corresp a Enero 2024</option>
+    <option value="2">Escala Corresp a Noviembre 2023</option>
+    <option value="3">Escala Corresp a Septiembre 2023</option>
+  </select>
+  <h5 class="mb-5">Sueldo Básico (aux 1ra): <span className="bruto">${sueldosBasicos[0].toFixed(2)}</span></h5>
       <h3>Ingresá tu categoría</h3>
       <br />
 
@@ -68,7 +106,7 @@ export default function Categorias() {
             type="radio"
             name="inlineRadioOptions"
             id="inlineRadio1"
-            value={166831.19}
+            value={sueldosBasicos[0]}
             onChange={manejarRadio}
           />
           <label class="form-check-label" for="inlineRadio1">
@@ -82,7 +120,7 @@ export default function Categorias() {
             type="radio"
             name="inlineRadioOptions"
             id="inlineRadio2"
-            value={178056.16}
+            value={sueldosBasicos[1]}
             onChange={manejarRadio}
           />
           <label class="form-check-label" for="inlineRadio2">
@@ -96,27 +134,27 @@ export default function Categorias() {
             type="radio"
             name="inlineRadioOptions"
             id="inlineRadio3"
-            value={166525.25}
+            value={sueldosBasicos[2]}
             onChange={manejarRadio}
           />
           <label class="form-check-label" for="inlineRadio3">
             Admin 1ra
           </label>
         </div>
-        <div class="form-check form-check-inline">
-          <input
-            class="form-check-input"
-            type="radio"
-            name="inlineRadioOptions"
-            id="inlineRadio4"
-            value="option2"
-            onclick="otroSueldo()"
-          />
-          <label class="form-check-label" for="inlineRadio4">
-            {" "}
-            <b>Otro</b>{" "}
-          </label>
-        </div>
+        <div class="form-check  color-h1">
+      
+      <input
+        class="form-check-input"
+        type="checkbox"
+        value=""
+        id="flexCheckDefault"
+        checked={esDiaCam}
+        onChange={manejarCheckboxEsDisCam}
+      />
+      <label class="form-check-label" for="flexCheckDefault">
+        Día del Cam.
+      </label>
+    </div>
       </div>
      
 
@@ -187,7 +225,9 @@ export default function Categorias() {
       <Calcu opcion={opcion}
              vaca={vaca}
              enf={enf}
-             dolarOficial={dolarCompra} />
+             dolarOficial={dolarCompra}
+             valorVacas={valorVacas}
+             esDiaCam={esDiaCam}/>
              
    
     </>
