@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/Oca-React-App/static/css/main.b4417fc8.css",
-    "main.js": "/Oca-React-App/static/js/main.01896366.js",
+    "main.js": "/Oca-React-App/static/js/main.96c4bafd.js",
     "static/media/pag10-ocajpg.webp": "/Oca-React-App/static/media/pag10-ocajpg.da7f871c7088ce4f51b4.webp",
     "static/media/aguinaldo.png": "/Oca-React-App/static/media/aguinaldo.79996a0bc5dc50f0f24d.png",
     "static/media/preguntas.png": "/Oca-React-App/static/media/preguntas.4d9d7bdb746d006ac27d.png",
     "index.html": "/Oca-React-App/index.html",
     "main.b4417fc8.css.map": "/Oca-React-App/static/css/main.b4417fc8.css.map",
-    "main.01896366.js.map": "/Oca-React-App/static/js/main.01896366.js.map"
+    "main.96c4bafd.js.map": "/Oca-React-App/static/js/main.96c4bafd.js.map"
   },
   "entrypoints": [
     "static/css/main.b4417fc8.css",
-    "static/js/main.01896366.js"
+    "static/js/main.96c4bafd.js"
   ]
 }
