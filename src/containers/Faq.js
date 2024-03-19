@@ -5,24 +5,19 @@ import Footer from "../components/Footer";
 export default function Faq() {
   const [valorSelectGuardias, setValorSelectGuardias] = useState(0);
   const [cantHoras, setCantidadHoras] = useState(0);
-
-  const recargarPagina = () => {
-    window.location.reload();
-  };
+  const [isCheck, setIsCheck] = useState(false);
+  const [viaticoYComida, setViaticoYComida] = useState(0);
 
   const manejarSelectGuardias = (e) => {
     const selectedValue = Number(e.target.value);
     setValorSelectGuardias(selectedValue);
   };
-  console.log(valorSelectGuardias);
 
   const manejarCantHoras = (e) => {
     let selectedValue = Number(e.target.value);
-    
+
     setCantidadHoras((prevSum) => prevSum + selectedValue);
-  
   };
-  console.log(cantHoras);
 
   const [opcion, setOpcion] = useState(435701.18);
 
@@ -30,159 +25,221 @@ export default function Faq() {
     setOpcion(e.target.value);
   };
 
+  const dia = opcion / 24;
+  const viatico = dia * 0.184843;
+  const comida = dia * 0.368358;
+
+  const manejarCheck = (e) => {
+    setIsCheck(e.target.checked);
+
+    if (!isCheck) {
+      const resultado = viatico + comida;
+      setViaticoYComida(resultado);
+    } else {
+      setViaticoYComida(0);
+    }
+  };
+  
+
+
   const adicCamioneros = 1.12;
-  const hora100 = opcion * 0.0104167;
-  const hora100dia = cantHoras * (hora100 * adicCamioneros );
-  const guardia6 = 6 * (hora100 * adicCamioneros );
-  const guardia7 = 7 * (hora100 * adicCamioneros );
-  const guardia8 = 8 * (hora100 * adicCamioneros );
+  const hora100 = (opcion * 0.0104167);
+  const hora100dia = cantHoras * (hora100 * adicCamioneros) + viaticoYComida;
+  const guardia6 = 6 * (hora100 * adicCamioneros) + viaticoYComida;
+  const guardia7 = 7 * (hora100 * adicCamioneros) + viaticoYComida;
+  const guardia8 = 8 * (hora100 * adicCamioneros) + viaticoYComida;
 
-
+  const resetear = () => {
+    setValorSelectGuardias(0);
+    setCantidadHoras(0);
+  };
 
   return (
-    <div className='contenedorPrincipal'>
-      
+    <div className="contenedorPrincipal">
       <div className="contenedor-centrar guardias">
-      <div className="py-3 px-5 form-contenedor">
-      <h2 className="mb-5" >Guardias y Horas extra </h2>
+        <div className="py-3 px-5 form-contenedor">
+          <h2 className="mb-5">Guardias y Horas extra </h2>
 
-      <h4>Ingresá tu categoría</h4>
-      <br />
+          <h4>Ingresá tu categoría</h4>
+          <br />
 
-      <div className="grid">
-        <div className="form-check form-check-inline ">
-          <input
-            className="form-check-input"
-            type="radio"
-            name="inlineRadioOptions"
-            id="inlineRadio1"
-            value={435701.18}
-            onChange={manejarRadio}
-            defaultChecked
-          />
-          <label className="form-check-label" htmlFor="inlineRadio1">
-            Auxiliar de 1ra{" "}
-          </label>
-        </div>
+          <div className="grid">
+            <div className="form-check form-check-inline ">
+              <input
+                className="form-check-input"
+                type="radio"
+                name="inlineRadioOptions"
+                id="inlineRadio1"
+                value={435701.18}
+                onChange={manejarRadio}
+                defaultChecked
+              />
+              <label className="form-check-label" htmlFor="inlineRadio1">
+                Auxiliar de 1ra{" "}
+              </label>
+            </div>
 
-        <div className="form-check form-check-inline">
-          <input
-            className="form-check-input"
-            type="radio"
-            name="inlineRadioOptions"
-            id="inlineRadio2"
-            value={465016.64}
-            onChange={manejarRadio}
-          />
-          <label className="form-check-label" htmlFor="inlineRadio2">
-            Operador de Serv
-          </label>
-        </div>
+            <div className="form-check form-check-inline">
+              <input
+                className="form-check-input"
+                type="radio"
+                name="inlineRadioOptions"
+                id="inlineRadio2"
+                value={465016.64}
+                onChange={manejarRadio}
+              />
+              <label className="form-check-label" htmlFor="inlineRadio2">
+                Operador de Serv
+              </label>
+            </div>
 
-        <div className="form-check form-check-inline">
-          <input
-            className="form-check-input"
-            type="radio"
-            name="inlineRadioOptions"
-            id="inlineRadio3"
-            value={434902.19}
-            onChange={manejarRadio}
-          />
-          <label className="form-check-label" htmlFor="inlineRadio3">
-            Admin 1ra
-          </label>
-        </div>
-        <div className="form-check  color-h1">
-      
-      <input
-        className="form-check-input"
-        type="checkbox"
-        value=""
-        id="flexCheckDefault"
-       /*  checked={true} */
-        /* onChange={manejarCheckboxEsDisCam} */
-      />
-      <label className="form-check-label" htmlFor="flexCheckDefault">
-        Viático y Com.
-      </label>
-    </div>
-        </div>
-       
+            <div className="form-check form-check-inline">
+              <input
+                className="form-check-input"
+                type="radio"
+                name="inlineRadioOptions"
+                id="inlineRadio3"
+                value={434902.19}
+                onChange={manejarRadio}
+              />
+              <label className="form-check-label" htmlFor="inlineRadio3">
+                Admin 1ra
+              </label>
+            </div>
+            <div className="form-check  color-h1">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault"
+                checked={isCheck}
+                onChange={manejarCheck}
+              />
+              <label className="form-check-label" htmlFor="flexCheckDefault">
+                Viático y Com.
+              </label>
+            </div>
+          </div>
 
+          <div>
+            <form className="form formulario">
+              <label for="numeroGuardias">Número de guardias este mes: </label>
+              <select
+                className="my-4 mx-2"
+                id="numeroGuardias"
+                name="numeroGuardias"
+                onChange={manejarSelectGuardias}
+                required
+              >
+                <option value="0">Selecciona...</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
 
+              <h5 className="my-4">Ingresá la duración de cada guardia:</h5>
 
-      
-        <div>
-          <form className="form formulario">
-            <label for="numeroGuardias">Número de guardias este mes: </label>
-            <select
-              className="my-4 mx-2"
-              id="numeroGuardias"
-              name="numeroGuardias"
-              onChange={manejarSelectGuardias}
-              required
-            >
-              <option value="">Selecciona...</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
+              {[...Array(valorSelectGuardias)].map((_, index) => (
+                <div key={index}>
+                  <label htmlFor={`guardia${index + 1}`}>
+                    {index + 1}° Guardia (horas):
+                  </label>
+                  <input
+                    className="m-1"
+                    type="number"
+                    id={`guardia${index + 1}`}
+                    name={`guardia${index + 1}`}
+                    min="6"
+                    max="8"
+                    onChange={manejarCantHoras}
+                    required
+                  />
+                  <br />
+                </div>
+              ))}
+            </form>
+          </div>
 
-            <h5 className="my-4">Ingresá la duración de cada guardia:</h5>
+          <button
+            type="button"
+            class="btn btn-primary mt-4"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Calcular!
+          </button>
 
-            {[...Array(valorSelectGuardias)].map((_, index) => (
-              <div key={index}>
-                <label htmlFor={`guardia${index + 1}`}>
-                  {index + 1}° Guardia (horas):
-                </label>
-                <input
-                  className="m-1"
-                  type="number"
-                  id={`guardia${index + 1}`}
-                  name={`guardia${index + 1}`}
-                  min="6"
-                  max="8"
-                 
-                  onChange={manejarCantHoras}
-                  required
-                />
-                <br />
+          <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    Resultado:
+                  </h1>
+                  <button
+                    onClick={resetear}
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <h5>
+                    {" "}
+                    Total Guardias a cobrar:{" "}
+                    <b className="bruto">
+                      {" "}
+                      $<span>{hora100dia.toFixed(2)}</span>
+                    </b>
+                  </h5>{" "}
+                  <br />
+                  <br />
+                  Valor Guardia de 6 horas:{" "}
+                  <b>
+                    {" "}
+                    $<span>{guardia6.toFixed(2)}</span>
+                  </b>{" "}
+                  <br />
+                  <br />
+                  Valor Guardia de 7 horas:{" "}
+                  <b>
+                    {" "}
+                    $<span>{guardia7.toFixed(2)}</span>
+                  </b>{" "}
+                  <br />
+                  <br />
+                  Valor Guardia de 8 horas:{" "}
+                  <b>
+                    {" "}
+                    $<span>{guardia8.toFixed(2)}</span>
+                  </b>{" "}
+                  <br />
+                  <br />
+                </div>
+                <div class="modal-footer">
+                  <button
+                    onClick={resetear}
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Cerrar
+                  </button>
+                </div>
               </div>
-            ))}
-          </form>
+            </div>
+          </div>
         </div>
-        
-<button type="button" class="btn btn-primary mt-4" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Calcular!
-</button>
 
-
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Resultado:</h1>
-        <button onClick={recargarPagina} type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-      <h5> Total Guardias a cobrar: <b className="bruto"> $<span>{hora100dia.toFixed(2)}</span></b></h5> <br/><br/>
-
-      Valor Guardia de 6 horas: <b> $<span>{guardia6.toFixed(2)}</span></b> <br/><br/>
-      Valor Guardia de 7 horas: <b> $<span>{guardia7.toFixed(2)}</span></b> <br/><br/>
-      Valor Guardia de 8 horas: <b> $<span>{guardia8.toFixed(2)}</span></b> <br/><br/>
-
-      </div>
-      <div class="modal-footer">
-        <button onClick={recargarPagina} type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        
-      </div>
-    </div>
-  </div>
-</div>
-        </div>
-        
         {/* <div className="py-3 px-5 form-contenedor">
         <h2>Preguntas Frecuentes</h2><br />
         
