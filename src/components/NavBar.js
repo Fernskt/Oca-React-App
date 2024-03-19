@@ -1,5 +1,5 @@
 import "../assets/css/App.css";
-import logo from "../assets/img/oca.png";
+/* import logo from "../assets/img/oca.png"; */
 import React from "react";
 
 export default function NavBar() {
@@ -7,7 +7,7 @@ export default function NavBar() {
     <>
       <nav className="navbar navbar-dark pt-4">
         <div className="container-fluid">
-          <img className="logo" src={logo} alt="Logo Oca" />
+          <h1 className="logo">mi<b>Sueldo</b></h1>
           <button
             className="navbar-toggler"
             type="button"
@@ -73,7 +73,7 @@ export default function NavBar() {
                         className="dropdown-item"
                         href="https://www.camioneros-ba.org.ar/images/joomlart/escalas/Cart_amplia_mayo_211.doc"
                       >
-                        Cartilla Ampliatoria 05/2023
+                        Cartilla Ampliatoria 05/2024
                       </a>
                     </li>
                   </ul>
@@ -100,7 +100,7 @@ export default function NavBar() {
                     className="nav-link"
                     href="https://www.fedcam.org.ar/images/joomlart/AcuerdoSalarialCamioneros2022-comprimido.pdf"
                   >
-                    Acuerdo Salarial 2022
+                    Acuerdo Salarial 2024
                   </a>
                 </li>
               </ul>

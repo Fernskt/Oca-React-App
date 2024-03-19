@@ -2,14 +2,14 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: linear-gradient(#3e0359ea, #0e064de6);
+    background: linear-gradient(#0e0014ea, #090337e6);
     color: rgba(255, 255, 255, 0.801);
    
 }
 
 .accordion-button,
 .accordion-header{
-    background-color: #300553e8;
+    background-color: #0e0014ea;
     color: white;
 }
 
@@ -27,7 +27,7 @@
 
 .contenedor-centrar {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .form-contenedor {
@@ -36,7 +36,9 @@
 
 }
 
-
+.guardias{
+    margin-bottom: 10rem;
+}
 
 .form-floating {
     color: black;
@@ -97,7 +99,7 @@
     text-align: center;
     margin-top: 2rem;
     color: rgba(255, 255, 255, 0.502);
-   background-color: #300553e8;
+   background-color: #0e0014e3;
     backdrop-filter: blur(5px);
     
 }

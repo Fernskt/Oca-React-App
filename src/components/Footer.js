@@ -16,7 +16,7 @@ export default function Footer() {
 
               <Link className='link' to="/Oca-React-App"><img src={home} alt="Home" className='img_footer'/>Home</Link>
            
-              <Link className='link' to="/Faq"><img src={faq} alt="FAQ" className='img_footer'/> FAQ</Link>
+              <Link className='link' to="/Faq"><img src={faq} alt="FAQ" className='img_footer'/> Guardias</Link>
             
         </div>
        

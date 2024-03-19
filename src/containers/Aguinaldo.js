@@ -44,7 +44,7 @@ export default function Aguinaldo() {
                 <input
                   type="number"
                   className="form-control"
-                  value={mayorSueldo}
+                  value={mayorSueldo === 0 ? 'null' : mayorSueldo}
                   onChange={manejarMayorSueldo}
                 />
                 <label for="floatingInput">

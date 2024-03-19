@@ -1,8 +1,6 @@
 import React from "react";
 
-export default function modal({dias, totalBruto, totalNeto, opcion, antiguedad, dia, hora100dia, 
-                                viatico, comida, sueldoBasicoACobrar, especialidad, viaticoPorMes,
-                                comidaPorMes, deducciones, anios, vacaciones, enfermedad}) {
+export default function modal({dias, totalBruto, totalNeto, opcion, antiguedad, dia, hora100dia, viatico, comida, sueldoBasicoACobrar, especialidad, viaticoPorMes, comidaPorMes, deducciones, anios, vacaciones, enfermedad, diaCam, ausencia, adicionalEspecialidad}) {
 
  opcion = parseFloat(opcion);
 
@@ -37,7 +35,9 @@ export default function modal({dias, totalBruto, totalNeto, opcion, antiguedad, 
                 Viático por día: <b> $<span>{viatico.toFixed(2)}</span></b> <br/><br/>
                 Sueldo: <b> $<span>{sueldoBasicoACobrar.toFixed(2)}</span></b> <br/><br/>
                 especialidad: <b> $<span>{especialidad.toFixed(2)}</span></b> <br/><br/>
-                Licencia por enfermedad: <b> $<span>{enfermedad.toFixed(2)}</span></b> <br/><br/>
+                faltas justificadas/feriado: <b> $<span>{enfermedad.toFixed(2)}</span></b> <br/><br/>
+                Día del Camionero: <b> $<span>{diaCam.toFixed(2)}</span></b> <br/><br/>
+                Ausencia: <b className="deducciones"> $<span>{ausencia.toFixed(2)}</span></b> <br/><br/>
                
                <h5>Total a cobrar Bruto: <b className="bruto"> $<span >{totalBruto.toFixed(2)}</span></b> <br/><br/></h5>
             </div>
@@ -76,6 +76,7 @@ export default function modal({dias, totalBruto, totalNeto, opcion, antiguedad, 
             <div class="modal-body">
             Total Viático: <b> $<span>{viaticoPorMes.toFixed(2)}</span></b> <br/><br/>
                 Total comida: <b> $<span>{comidaPorMes.toFixed(2)}</span></b> <br/><br/>
+                Adic. Especialidad: <b> $<span>{adicionalEspecialidad.toFixed(2)}</span></b> <br/><br/>
                 Vacaciones: <b> $<span>{vacaciones.toFixed(2)}</span></b> <br/><br/>
                
                 Deducciones: <b className="deducciones"> $-<span>{deducciones.toFixed(2)}</span></b> <br/><br/>
