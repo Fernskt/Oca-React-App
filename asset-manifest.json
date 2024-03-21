@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Oca-React-App/static/css/main.3b80eeaa.css",
-    "main.js": "/Oca-React-App/static/js/main.9403e03f.js",
+    "main.css": "/Oca-React-App/static/css/main.93f63636.css",
+    "main.js": "/Oca-React-App/static/js/main.49591d3c.js",
     "static/media/pag10-ocajpg.webp": "/Oca-React-App/static/media/pag10-ocajpg.da7f871c7088ce4f51b4.webp",
     "static/media/aguinaldo.png": "/Oca-React-App/static/media/aguinaldo.79996a0bc5dc50f0f24d.png",
     "static/media/preguntas.png": "/Oca-React-App/static/media/preguntas.4d9d7bdb746d006ac27d.png",
     "index.html": "/Oca-React-App/index.html",
-    "main.3b80eeaa.css.map": "/Oca-React-App/static/css/main.3b80eeaa.css.map",
-    "main.9403e03f.js.map": "/Oca-React-App/static/js/main.9403e03f.js.map"
+    "main.93f63636.css.map": "/Oca-React-App/static/css/main.93f63636.css.map",
+    "main.49591d3c.js.map": "/Oca-React-App/static/js/main.49591d3c.js.map"
   },
   "entrypoints": [
-    "static/css/main.3b80eeaa.css",
-    "static/js/main.9403e03f.js"
+    "static/css/main.93f63636.css",
+    "static/js/main.49591d3c.js"
   ]
 }
