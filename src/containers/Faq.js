@@ -1,6 +1,7 @@
 import "../assets/css/App.css";
 import React, { useState } from "react";
 import Footer from "../components/Footer";
+import NavBar from "../components/NavBar";
 
 export default function Faq() {
   const [valorSelectGuardias, setValorSelectGuardias] = useState(0);
@@ -56,6 +57,7 @@ export default function Faq() {
 
   return (
     <div className="contenedorPrincipal">
+      <NavBar></NavBar>
       <div className="contenedor-centrar guardias">
         <div className="py-3 px-5 form-contenedor">
           <h2 className="mb-5">Guardias y Horas extra </h2>

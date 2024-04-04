@@ -1,22 +1,26 @@
+:root{ 
+--gradiente1: linear-gradient(90deg, rgba(14, 0, 20, 0.974) 0%, rgba(9, 3, 55, 0.939) 100%);
+}
+
 .bg-color {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: linear-gradient(#0e0014ea, #090337e6);
+    background: var(--gradiente1);
     color: rgba(255, 255, 255, 0.801);
    
 }
 
-.accordion-button,
+/* .accordion-button,
 .accordion-header{
     background-color: #0e0014ea;
     color: white;
-}
+} */
 
 .bg-image {
     background-image: url(../img/pag10-ocajpg.webp);
-    background-repeat: no-repeat;
-    background-size: cover;
+    
+    background-size: contain;
     background-position: center;
     
 }
@@ -66,7 +70,7 @@
 .bruto{
     color: #1fa65e;
     font-weight: 700;
-    font-size: larger;
+    
 }
 
 .deducciones{
@@ -99,7 +103,7 @@
     text-align: center;
     margin-top: 2rem;
     color: rgba(255, 255, 255, 0.502);
-   background-color: #0e0014e3;
+   background: var(--gradiente1);
     backdrop-filter: blur(5px);
     
 }
@@ -127,6 +131,21 @@
 .total{
     margin: 2rem 0 5rem;
 }
-.accordion{
-    margin: 3rem 0;
+.mostrarDatos{
+
+    position: sticky;
+    bottom: 4rem;
+    background: var(--gradiente1);
+    background-attachment:fixed;
+    backdrop-filter: blur(10px);
+    border-radius: .5rem;
+   border: solid 1px white;
+   padding: .5rem;
 }
+.dolar{
+    color: rgba(255, 255, 255, 0.651);
+    font-size: .9rem;
+}
+/* .accordion{
+    margin: 3rem 0;
+} */

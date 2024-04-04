@@ -5,6 +5,7 @@ import Calcu from "./Calcu";
 import axios from 'axios';
 
 
+
 export default function Categorias() {
 
   const [dolarCompra, setDolarCompra] = useState(0);
@@ -117,6 +118,7 @@ useEffect(()=>{
   <h5 className="mb-5">Sueldo Básico (aux 1ra): <span className="bruto">${sueldosBasicos[0].toFixed(2)}</span></h5>
       <h3>Ingresá tu categoría</h3>
       <br />
+      
 
       <div className="grid">
         <div className="form-check form-check-inline ">

@@ -56,7 +56,7 @@ export default function Calcu({opcion, vaca, enf, aus, dolarOficial, valorVacas,
 
   return (
     <>
-      
+    
       <form className="form-floating formulario">
         <div className="form-floating mb-3 ">
           <input
@@ -107,6 +107,7 @@ export default function Calcu({opcion, vaca, enf, aus, dolarOficial, valorVacas,
         ) : (
           <br></br>
         )}
+        <p className="dolar">(Valor del dólar hoy: AR${dolarOficial})</p>
       </form>
       <MostrarTotalSueldo 
       dias={dias}
