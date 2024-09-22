@@ -14,8 +14,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/Oca-React-App" element={<Home />}></Route>
-          <Route path="/Aguinaldo" element={<Aguinaldo />}></Route>
-          <Route path="/Faq" element={<Faq />}></Route>
+          <Route path="/Oca-React-App/Aguinaldo" element={<Aguinaldo />}></Route>
+          <Route path="/Oca-React-App/Faq" element={<Faq />}></Route>
         </Routes>
       </BrowserRouter>
    </>

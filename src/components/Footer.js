@@ -12,11 +12,11 @@ export default function Footer() {
         
         <div className='footer-link'>
           
-              <Link className='link' to="/Aguinaldo"><img src={aguinaldo} alt="Aguinaldo" className='img_footer'/>Aguinaldo</Link>
+              <Link className='link' to="/Oca-React-App/Aguinaldo"><img src={aguinaldo} alt="Aguinaldo" className='img_footer'/>Aguinaldo</Link>
 
               <Link className='link' to="/Oca-React-App"><img src={home} alt="Home" className='img_footer'/>Home</Link>
            
-              <Link className='link' to="/Faq"><img src={faq} alt="FAQ" className='img_footer'/> Guardias</Link>
+              <Link className='link' to="/Oca-React-App/Faq"><img src={faq} alt="FAQ" className='img_footer'/> Guardias</Link>
             
         </div>
        

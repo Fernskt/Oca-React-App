@@ -132,15 +132,7 @@
     margin: 2rem 0 5rem;
 }
 .mostrarDatos{
-
-    position: sticky;
-    bottom: 4rem;
-    background: var(--gradiente1);
-    background-attachment:fixed;
-    backdrop-filter: blur(10px);
-    border-radius: .5rem;
-   border: solid 1px white;
-   padding: .5rem;
+   
 }
 .dolar{
     color: rgba(255, 255, 255, 0.651);

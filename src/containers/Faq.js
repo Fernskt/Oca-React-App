@@ -20,7 +20,7 @@ export default function Faq() {
     setCantidadHoras((prevSum) => prevSum + selectedValue);
   };
 
-  const [opcion, setOpcion] = useState(435701.18);
+  const [opcion, setOpcion] = useState(505413.36);
 
   const manejarRadio = (e) => {
     setOpcion(e.target.value);
@@ -43,9 +43,9 @@ export default function Faq() {
   
 
 
-  const adicCamioneros = 1.12;
+  const adicCamioneros = 1.14;
   const hora100 = (opcion * 0.0104167);
-  const hora100dia = cantHoras * (hora100 * adicCamioneros) + viaticoYComida;
+  const hora100dia = cantHoras * (hora100 * adicCamioneros) + viaticoYComida * valorSelectGuardias;
   const guardia6 = 6 * (hora100 * adicCamioneros) + viaticoYComida;
   const guardia7 = 7 * (hora100 * adicCamioneros) + viaticoYComida;
   const guardia8 = 8 * (hora100 * adicCamioneros) + viaticoYComida;
@@ -72,7 +72,7 @@ export default function Faq() {
                 type="radio"
                 name="inlineRadioOptions"
                 id="inlineRadio1"
-                value={435701.18}
+                value={505413.36}
                 onChange={manejarRadio}
                 defaultChecked
               />
@@ -87,7 +87,7 @@ export default function Faq() {
                 type="radio"
                 name="inlineRadioOptions"
                 id="inlineRadio2"
-                value={465016.64}
+                value={539419.30}
                 onChange={manejarRadio}
               />
               <label className="form-check-label" htmlFor="inlineRadio2">
@@ -101,7 +101,7 @@ export default function Faq() {
                 type="radio"
                 name="inlineRadioOptions"
                 id="inlineRadio3"
-                value={434902.19}
+                value={504486.54}
                 onChange={manejarRadio}
               />
               <label className="form-check-label" htmlFor="inlineRadio3">

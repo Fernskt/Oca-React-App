@@ -25,7 +25,7 @@ export default function Calcu({opcion, vaca, enf, aus, dolarOficial, valorVacas,
     setHoras(e.target.value);
   };
 
-  const adicCamioneros = 1.12;
+  const adicCamioneros = 1.14;
 
  useEffect(()=>{
   setDias(30-enf);
@@ -39,7 +39,7 @@ export default function Calcu({opcion, vaca, enf, aus, dolarOficial, valorVacas,
   const ausencia = ((parseFloat(opcion) / 30)*aus)*adicCamioneros;
   const sueldoBasicoACobrar = (opcion / 30) * dias;
   const hora100dia = horas * (hora100 * adicCamioneros );
-  const especialidad = sueldoBasicoACobrar * 0.12;
+  const especialidad = sueldoBasicoACobrar * 0.14;
   const promHs = 904.62;
   const vacaciones = vaca * valorVacas;
   const enfermedad = ((parseFloat(opcion) / 24)*adicCamioneros)*enf;
@@ -48,7 +48,7 @@ export default function Calcu({opcion, vaca, enf, aus, dolarOficial, valorVacas,
   const comida = dia * 0.368358;
   const viaticoPorMes = viatico * (24 - enf - aus);
   const comidaPorMes = comida * (24 - enf - aus);
-  const adicionalEspecialidad = (viaticoPorMes + comidaPorMes)*0.12;
+  const adicionalEspecialidad = (viaticoPorMes + comidaPorMes)*0.14;
   const totalBruto = (diaCam() + antiguedad + hora100dia + especialidad + vacaciones + enfermedad + sueldoBasicoACobrar + promHs - ausencia) ;
   const deducciones = totalBruto * 0.215;
   const totalNeto = (viaticoPorMes + comidaPorMes + adicionalEspecialidad + totalBruto) - deducciones;

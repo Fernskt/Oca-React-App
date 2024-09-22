@@ -23,7 +23,7 @@ export default function Categorias() {
     dolarOficial();
   },[]);
 
-  const [sueldosBasicos, setSueldosBasicos] = useState([435701.18,465016.64,434902.19]);
+  const [sueldosBasicos, setSueldosBasicos] = useState([505413.36,539419.30,504486.54]);
   const [valorSelect, setValorSelect] = useState("1");
   const [opcion, setOpcion] = useState(0);
   const [vacaciones, setVacaciones] = useState(false);
@@ -81,24 +81,24 @@ export default function Categorias() {
 
   switch(selectedValue){
     case "1":
-      setSueldosBasicos([435701.18,465016.64,434902.19]);
+      setSueldosBasicos([505413.36,539419.30,504486.54]);
       setValorVacas(10208.68);
       break;
     case "2":
+      setSueldosBasicos([435701.18,465016.64,434902.19]);
+      setValorVacas(11842.06);
+      break;
+    case "3":
       setSueldosBasicos([348560.94,372013.31,347921.75]);
       setValorVacas(8166.94);
       break;
-    case "3":
+    case "4":
       setSueldosBasicos([298425.46,318504.55,297878.21]);
       setValorVacas(6992.24);
       break;
-    case "4":
-      setSueldosBasicos([238568.60,254620.31,238131.11]);
-      setValorVacas(5589.77);
-      break;
     default:
-      setSueldosBasicos([435701.18,465016.64,434902.19]);
-      setValorVacas(10208.68);
+      setSueldosBasicos([505413.36,539419.30,504486.54]);
+      setValorVacas(11842.06);
   }
 }
 
@@ -110,10 +110,10 @@ useEffect(()=>{
   return (
     <>
     <select className="form-select " aria-label="Default select example" onChange={manejarSelect} value={valorSelect}>
-    <option value="1">Escala Corresp a Marzo 2024</option>
-    <option value="2">Escala Corresp a Febrero 2024</option>
-    <option value="3">Escala Corresp a Enero 2023</option>
-    <option value="4">Escala Corresp a Noviembre 2023</option>
+    <option value="1">Escala Corresp a Abril 2024</option>
+    <option value="2">Escala Corresp a Marzo 2024</option>
+    <option value="3">Escala Corresp a Febrero 2023</option>
+    <option value="4">Escala Corresp a Enero 2023</option>
   </select>
   <h5 className="mb-5">Sueldo Básico (aux 1ra): <span className="bruto">${sueldosBasicos[0].toFixed(2)}</span></h5>
       <h3>Ingresá tu categoría</h3>

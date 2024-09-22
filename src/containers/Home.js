@@ -10,11 +10,14 @@ export default function Home() {
     <div className='contenedorPrincipal'>
      
       <NavBar></NavBar>
-      <div className="contenedor-centrar">
-        <div className="py-3 px-5 form-contenedor">
+      <div className="col-lg-6">
+        <div className="py-3 px-5">
         <Categorias></Categorias>
         </div>
       </div> 
+      <div>
+        
+      </div>
       <Footer></Footer>
     </div> 
    

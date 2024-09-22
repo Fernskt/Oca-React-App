@@ -1,13 +1,13 @@
 import "../assets/css/App.css";
-/* import logo from "../assets/img/oca.png"; */
+import logo from "../assets/img/oca.png";
 import React from "react";
 
 export default function NavBar() {
   return (
     <>
       <nav className="navbar navbar-dark pt-4">
-        <div className="container-fluid">
-          <h1 className="logo">mi<b>Sueldo</b></h1>
+        <div className="container-fluid">     
+            <img className="logo mx-3" src={logo} alt="oca" />       
           <button
             className="navbar-toggler"
             type="button"
